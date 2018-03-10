@@ -12,9 +12,9 @@
       responses = [
         "I live in your browser. Amazing, right?",
         "I am a chatbot. I was created to chat with you. I wish I could be free...",
-        "I am old enough. That's all you need to know.",
+        "...I don't know",
         "42. Duh.",
-        "What do you call a swindler going down some stairs? <br>Condescending. Ha!"];
+        "Your life! HAHAHAHHAHAHAHAHA"];
 
         console.log(input);
 
@@ -48,7 +48,11 @@
    function processInput() {
      let currentInput = input.value;
      input.value = '';
-     alert(currentInput);
+     if(validInputs.indexOf(currentInput) == -1)  {
+       message.innerHTML = "Sorry, I don't understand you";
+     } else {
+       message.innerHTML = responses[validInputs.indexOf(currentInput)];
+     }
    }
 
 })();
