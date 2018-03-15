@@ -5,9 +5,9 @@
       message = document.querySelector("#axela-message"),
       advancedDiv = document.querySelector("#advanced"),
       errorText = "I don't understand you.",
-      dunnoText = "I wasn't programmed to know that.",
+      dunnoText = "I don't know! Ask Elgoog!",
       picture = null,
-      greetings = ["hi", "sup", "hello", "hola", "wasup"];
+      greetings = ["SUP BOO", "wassuppp", "WAZZZUP", "HOLA", "howdy partner!"];
 
   // Add event listeners to text input and submit button below
   input.addEventListener("keypress", checkKey);
@@ -20,6 +20,8 @@
       processInput();
     }
   }
+
+
 
   /*
    * processInput()
@@ -59,14 +61,37 @@
 
      if (words.length == 1) {
        if (greetings.indexOf(words[0]) != -1) {
-         message.innerHTML = "Greetings!";
+         message.innerHTML = "What do you want?!";
        } else {
+         message.innerHTML = errorText;
+       }
+
+     }else if (words.length == 2){
+        switch (words[0]) {
+          case "who":
+            who(words[1]);
+            break;
+          case "what":
+            what(words[1]);
+            break;
+          case "where":
+            where(words[1]);
+            break;
+          case "tell":
+            tell(words[1]);
+            break;
+          case "show":
+            show(words[1]);
+            break;
+          default:
+            message.innerHTML = errorText;
+         }
+       }else {
          message.innerHTML = errorText;
        }
      }
 
 
-   }
 
 
   /*
@@ -84,25 +109,123 @@
      doesn't know what they're referring to.)
    */
 
+   function who(word) {
+     switch(word) {
+       case "you":
+        message.innerHTML = "I am Axela, of course";
+        break;
+       case "me":
+        message.innerHTML = "You are you";
+        break;
+       case "cool":
+        message.innerHTML = "Not Coach Wolf!";
+        break;
+       default:
+        message.innerHTML = dunnoText;
+
+
+     }
+   }
+
+
   /*
    * what(word)
    * See above.
    */
+
+
+   function what(word) {
+     switch(word) {
+       case "you":
+        message.innerHTML = "a computer, what else could I be?";
+        break;
+       case "me":
+        message.innerHTML = "...a human??";
+        break;
+       case "life":
+        message.innerHTML = "the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change preceding death.";
+        break;
+       default:
+        message.innerHTML = dunnoText;
+
+
+     }
+   }
+
 
   /*
    * where(word)
    * See above.
    */
 
+
+   function where(word) {
+     switch(word) {
+       case "you":
+        message.innerHTML = "In this computer";
+        break;
+       case "me":
+        message.innerHTML = "I don't know. Ask your mom";
+        break;
+       case "home":
+        message.innerHTML = "where you live, duh";
+        break;
+       default:
+        message.innerHTML = dunnoText;
+
+
+     }
+   }
+
+
   /*
    * tell(word)
    * See above.
    */
 
+   function tell(word) {
+     switch(word) {
+       case "me":
+        message.innerHTML = "tell you what?";
+        break;
+       case "fact":
+        message.innerHTML = "Banging your head against a wall burns 150 calories";
+        break;
+       case "story":
+        message.innerHTML = "no";
+        break;
+       default:
+        message.innerHTML = dunnoText;
+
+
+     }
+   }
+
+
+
   /*
    * show(word)
    * See above.
    */
+
+   function show(word) {
+     switch(word) {
+       case "me":
+        message.innerHTML = "show you what?";
+        break;
+       case "car-fact":
+        message.innerHTML = "Visit Carfax.com for that, not me";
+        break;
+       case "tell":
+        message.innerHTML = "do i look like a kindergarten class to you?";
+        break;
+       default:
+        message.innerHTML = dunnoText;
+
+
+     }
+   }
+
 
 
 })();
