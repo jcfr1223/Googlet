@@ -219,12 +219,18 @@
        case "tell":
         message.innerHTML = "do i look like a kindergarten class to you?";
         break;
+      case "dog":
+        message.innerHTML = "here is the dog";
+        picture = document.createElement('img');
+        picture.src = 'img/dog.png';
+        advancedDiv.appendChild(picture);
        default:
         message.innerHTML = dunnoText;
 
 
      }
    }
+
 
 
 
