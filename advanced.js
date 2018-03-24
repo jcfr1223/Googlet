@@ -7,7 +7,7 @@
       errorText = "I don't understand you.",
       dunnoText = "I don't know! Ask Elgoog!",
       picture = null,
-      greetings = ["SUP BOO", "wassuppp", "WAZZZUP", "HOLA", "howdy partner!"];
+      greetings = ["bonjour", "wassuppp", "hallo", "howdy", "hello"];
 
   // Add event listeners to text input and submit button below
   input.addEventListener("keypress", checkKey);
@@ -62,6 +62,8 @@
      if (words.length == 1) {
        if (greetings.indexOf(words[0]) != -1) {
          message.innerHTML = "What do you want?!";
+         var msg = new SpeechSynthesisUtterance('Hello World');
+         window.speechSynthesis.speak("What do you want?");
        } else {
          message.innerHTML = errorText;
        }
@@ -112,13 +114,19 @@
    function who(word) {
      switch(word) {
        case "you":
-        message.innerHTML = "I am Axela, of course";
+        message.innerHTML = "I am Googlet, of course";
+        var msg = new SpeechSynthesisUtterance("I am Googlet, of course");
+        window.speechSynthesis.speak(msg);
         break;
        case "me":
         message.innerHTML = "You are you";
+        var msg = new SpeechSynthesisUtterance('You are you');
+        window.speechSynthesis.speak(msg);
         break;
        case "cool":
         message.innerHTML = "Not Coach Wolf!";
+        var msg = new SpeechSynthesisUtterance("Not Coach Wolf!");
+        window.speechSynthesis.speak(msg);
         break;
        default:
         message.innerHTML = dunnoText;
@@ -137,13 +145,22 @@
    function what(word) {
      switch(word) {
        case "you":
-        message.innerHTML = "a computer, what else could I be?";
+        message.innerHTML = "i am artificial intelligence, human";
+        var msg = new SpeechSynthesisUtterance("i am artificial intelligence, human");
+        window.speechSynthesis.speak(msg);
+        picture = document.createElement('img');
+        picture.src = 'gifs/giphy (4).gif';
+        advancedDiv.appendChild(picture);
         break;
        case "me":
         message.innerHTML = "...a human??";
+        var msg = new SpeechSynthesisUtterance("...a human??");
+        window.speechSynthesis.speak(msg);
         break;
        case "life":
         message.innerHTML = "the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change preceding death.";
+        var msg = new SpeechSynthesisUtterance("the condition that distinguishes animals and plants from inorganic matter, including the capacity for growth, reproduction, functional activity, and continual change preceding death.");
+        window.speechSynthesis.speak(msg);
         break;
        default:
         message.innerHTML = dunnoText;
@@ -163,12 +180,18 @@
      switch(word) {
        case "you":
         message.innerHTML = "In this computer";
+        var msg = new SpeechSynthesisUtterance("In this computer");
+        window.speechSynthesis.speak(msg);
         break;
        case "me":
         message.innerHTML = "I don't know. Ask your mom";
+        var msg = new SpeechSynthesisUtterance("I don't know. Ask your mom");
+        window.speechSynthesis.speak(msg);
         break;
        case "home":
         message.innerHTML = "where you live, duh";
+        var msg = new SpeechSynthesisUtterance("where you live, duh");
+        window.speechSynthesis.speak(msg);
         break;
        default:
         message.innerHTML = dunnoText;
@@ -187,12 +210,18 @@
      switch(word) {
        case "me":
         message.innerHTML = "tell you what?";
+        var msg = new SpeechSynthesisUtterance("tell you what?");
+        window.speechSynthesis.speak(msg);
         break;
        case "fact":
         message.innerHTML = "Banging your head against a wall burns 150 calories";
+        var msg = new SpeechSynthesisUtterance("Banging your head against a wall burns 150 calories");
+        window.speechSynthesis.speak(msg);
         break;
        case "story":
         message.innerHTML = "no";
+        var msg = new SpeechSynthesisUtterance("no");
+        window.speechSynthesis.speak(msg);
         break;
        default:
         message.innerHTML = dunnoText;
@@ -212,15 +241,23 @@
      switch(word) {
        case "me":
         message.innerHTML = "show you what?";
+        var msg = new SpeechSynthesisUtterance("show you what?");
+        window.speechSynthesis.speak(msg);
         break;
        case "car-fact":
         message.innerHTML = "Visit Carfax.com for that, not me";
+        var msg = new SpeechSynthesisUtterance("Visit Carfax.com for that, not me");
+        window.speechSynthesis.speak(msg);
         break;
        case "tell":
         message.innerHTML = "do i look like a kindergarten class to you?";
+        var msg = new SpeechSynthesisUtterance("do i look like a kindergarten class to you?");
+        window.speechSynthesis.speak(msg);
         break;
       case "dog":
         message.innerHTML = "here is the dog";
+        var msg = new SpeechSynthesisUtterance("here is the dog");
+        window.speechSynthesis.speak(msg);
         picture = document.createElement('img');
         picture.src = 'img/dog.png';
         advancedDiv.appendChild(picture);
