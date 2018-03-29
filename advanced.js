@@ -5,7 +5,7 @@
       message = document.querySelector("#axela-message"),
       advancedDiv = document.querySelector("#advanced"),
       errorText = "I don't understand you.",
-      dunnoText = "I don't know! Ask Elgoog!",
+      dunnoText = "I don't know! Ask Telgoog!",
       picture = null,
       greetings = ["bonjour", "wassuppp", "hallo", "howdy", "hello"];
 
@@ -53,7 +53,7 @@
 
    function processInput() {
      if (advancedDiv.contains(picture)){
-       picture.removeChild();
+       advancedDiv.removeChild(picture);
      }
 
      var words = input.value.toLowerCase().trim().split(" ");
@@ -62,10 +62,12 @@
      if (words.length == 1) {
        if (greetings.indexOf(words[0]) != -1) {
          message.innerHTML = "What do you want?!";
-         var msg = new SpeechSynthesisUtterance('Hello World');
-         window.speechSynthesis.speak("What do you want?");
+         var msg = new SpeechSynthesisUtterance("what do you want?");
+         window.speechSynthesis.speak(msg);
        } else {
          message.innerHTML = errorText;
+         var msg = new SpeechSynthesisUtterance(errorText);
+         window.speechSynthesis.speak(msg);
        }
 
      }else if (words.length == 2){
@@ -244,7 +246,7 @@
         var msg = new SpeechSynthesisUtterance("show you what?");
         window.speechSynthesis.speak(msg);
         break;
-       case "car-fact":
+       case "car-fax":
         message.innerHTML = "Visit Carfax.com for that, not me";
         var msg = new SpeechSynthesisUtterance("Visit Carfax.com for that, not me");
         window.speechSynthesis.speak(msg);
